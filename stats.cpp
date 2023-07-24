@@ -1,8 +1,10 @@
 #include "stats.h"
-
-Stats Statistics::ComputeStatistics(const std::vector<float>& value) {
+template <class T> Statistics::Stats<>::Stats(){}
+template <class T> Statistics::Stats<T,T,T>::Stats(T average,T max,T min):average(average),max(max),min(min){}
+template <class T> Stats Statistics::ComputeStatistics(const std::vector<T>& value) 
+{
     //Implement statistics here
-    Stats x;
+    Stats<T> x;
     if (value.size()==0)
     {
         x.average =NAN;
