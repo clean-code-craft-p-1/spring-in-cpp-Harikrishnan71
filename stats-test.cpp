@@ -12,13 +12,13 @@ TEST(Statistics, ReportsAverageMinMax) {
 }
 
 TEST(Statistics, AverageNaNForEmpty) {
-    auto computedStats = Statistics::ComputeStatistics({});
+    auto computedStats = Statistics::ComputeStatistics({value});
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h
     
-    REQUIRE(isnan(computedStats.average));
-    REQUIRE(isnan(computedStats.max));
-    REQUIRE(isnan(computedStats.min));
+    REQUIRE(std::isnan(computedStats.average));
+    REQUIRE(std::isnan(computedStats.max));
+    REQUIRE(std::isnan(computedStats.min));
     
     //Design the REQUIRE statement here.
     //Use http://www.cplusplus.com/reference/cmath/isnan/
