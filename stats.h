@@ -9,5 +9,7 @@ namespace Statistics {
     T max;
     T min;
     Stats(T average, T max, T min); 
+};
+    template <class T=float>
     Stats<T> ComputeStatistics(const std::vector<T>&);
 }
