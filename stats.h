@@ -11,7 +11,7 @@ namespace Statistics {
     
     Stats ComputeStatistics(const std::vector<double>&);
 
-    template <typename T>
+   /* template <typename T>
     T FindAverage(const std::vector<T>& vec) {
         T sum = std::accumulate(vec.begin(), vec.end(), 0.0);
         if (sum == 0)
@@ -28,7 +28,7 @@ namespace Statistics {
     template <typename T>
     T FindMin(const std::vector<T>& vec) {
         return *min_element(vec.begin(), vec.end());
-    }
+    }*/
 }
 class IAlerter
 {
