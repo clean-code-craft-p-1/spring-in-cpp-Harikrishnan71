@@ -16,9 +16,9 @@ TEST(Statistics, AverageNaNForEmpty) {
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h
     
-    REQUIRE(isnan(computeStats.average));
-    REQUIRE(isnan(computeStats.max));
-    REQUIRE(isnan(computeStats.min));
+    REQUIRE(isnan(computedStats.average));
+    REQUIRE(isnan(computedStats.max));
+    REQUIRE(isnan(computedStats.min));
     
     //Design the REQUIRE statement here.
     //Use http://www.cplusplus.com/reference/cmath/isnan/
