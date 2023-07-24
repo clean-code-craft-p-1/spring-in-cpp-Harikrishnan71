@@ -1,7 +1,13 @@
 #include <vector>
+#include <math.h>
+#include <cmath>
+#include <numeric>
+#include <algorithm>
 
+using namespace std;
 namespace Statistics {
     // define the Stats structure here. See the tests to infer its properties
+    
     struct Stats
     {
         double average;
@@ -11,7 +17,7 @@ namespace Statistics {
     
     Stats ComputeStatistics(const std::vector<double>&);
 
-   /* template <typename T>
+    template <typename T>
     T FindAverage(const std::vector<T>& vec) {
         T sum = std::accumulate(vec.begin(), vec.end(), 0.0);
         if (sum == 0)
@@ -28,8 +34,9 @@ namespace Statistics {
     template <typename T>
     T FindMin(const std::vector<T>& vec) {
         return *min_element(vec.begin(), vec.end());
-    }*/
+    }
 }
+
 class IAlerter
 {
 public:
@@ -50,6 +57,8 @@ public:
 	virtual void sendAlert() override;
     bool ledGlows = false;
 };
+
+
 
 class StatsAlerter
 {
