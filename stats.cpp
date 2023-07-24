@@ -1,25 +1,25 @@
 #include "stats.h"
-#include<cmath>
-#include<bits/stdc++.h>
-#include<vector>
-Stats Statistics::ComputeStatistics(const std::vector<double>& value) 
+#include <limits.h>
+
+Statistics::Stats Statistics::ComputeStatistics(const std::vector<double>& vec) 
 {
     //Implement statistics here
-    Stats x;
-    if (value.size()==0)
+    Stats value;
+    
+    if(vec.empty())
     {
-        x.average =NAN;
-        x.max =NAN;
-        x.min =NAN;
+        value.average = NAN;
+        value.max 	  = NAN;
+        value.min 	  = NAN;
     }
     else
     {
-        x.max = *max_element(value.begin(),value.end());
-        x.min = *max_element(value.begin(),value.end());
-        x.average = (accumulate(value.begin(),value.end(),0))/value.size();
-    
+        value.average = FindAverage(vec);
+        value.max 	  = FindMax(vec);
+        value.min 	  = FindMin(vec);	
     }
-    return x;
+
+    return value;
 }
 
 
@@ -43,7 +43,6 @@ StatsAlerter::StatsAlerter(float maxThreshold, std::vector<IAlerter*> alerters)
     }
     
 } 
-
 void StatsAlerter::checkAndAlert(const std::vector<double>& val)
 {
     auto computeMax = Statistics::ComputeStatistics(val);
@@ -56,5 +55,3 @@ void StatsAlerter::checkAndAlert(const std::vector<double>& val)
         }
     }
 }
-        
-
